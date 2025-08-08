@@ -5,10 +5,16 @@
     'description': 'Handles grades among students and courses',
     'author': 'Milton',
     'category': 'Base',
-    'version': '17.0.0.1',
+    'version': '18.0.0.1',
     'depends': ['base'],
-    'data': [],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/grades_course_views.xml',
+        'views/grades_manager_menus.xml',
+        'views/res_partner_views.xml',
+    ],
     'license': 'AGPL-3',
+    'application': True,
     'installable': True,
     'auto_install': False,
 }
