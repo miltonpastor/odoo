@@ -25,12 +25,13 @@
             <form string="Courses">
                 <sheet>
                     <group>
-                        <group>
-                            <field name="name"/>
-                            <field name="date"/>
-                            <field name="description"/>
-                            <field name="course_id"/>
-                        </group>
+                        <field name="name"/>
+                        <field name="date"/>
+                        <field name="description"/>
+                        <field name="course_id"/>
+                    </group>
+                    <group>
+                        <field name="grade_ids" mode="list" view_id="ref('grades_manager.grades_grade_list_view')"/>
                     </group>
                 </sheet>
             </form>

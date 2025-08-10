@@ -5,4 +5,5 @@
     <menuitem id="grades_course_menu" parent="grades_course_manager_menu" name="Courses" action="grades_courses_action"/>
     <menuitem id="grades_evaluation_menu" parent="grades_course_manager_menu" name="Evaluations" action="grades_evaluations_action"/>
     <menuitem id="students_menu" parent="grades_manager_menu" name="Students" action="students_action"/>
+    <menuitem id="grades_grade_menu" parent="grades_course_manager_menu" name="Grades" action="grades_grades_action"/>
 </odoo>
