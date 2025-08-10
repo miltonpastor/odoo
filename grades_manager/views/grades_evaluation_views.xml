@@ -1,0 +1,39 @@
+<odoo>
+    <record id="grades_evaluations_action" model="ir.actions.act_window">
+        <field name="name">Evaluations</field>
+        <field name="res_model">grades.evaluation</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="grades_evaluations_list_view" model="ir.ui.view">
+        <field name="name">grades.evaluation.list</field>
+        <field name="model">grades.evaluation</field>
+        <field name="arch" type="xml">
+            <list string="Courses">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="description"/>
+                <field name="course_id"/>
+            </list>
+        </field>
+
+    </record>
+        <record id="grades_evaluations_form_view" model="ir.ui.view">
+        <field name="name">grades.evaluation.form</field>
+        <field name="model">grades.evaluation</field>
+        <field name="arch" type="xml">
+            <form string="Courses">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="date"/>
+                            <field name="description"/>
+                            <field name="course_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

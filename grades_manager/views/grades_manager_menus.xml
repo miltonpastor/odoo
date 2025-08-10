@@ -1,5 +1,8 @@
 <odoo>
     <menuitem id="grades_manager_menu" name="Grades Manager"/>
-    <menuitem id="grades_course_menu" parent="grades_manager_menu" name="Course" action="grades_courses_action"/>
+    <menuitem id="grades_course_manager_menu" sequence="1" parent="grades_manager_menu" name="Course"/>
     <menuitem id="teacher_menu" parent="grades_manager_menu" name="Teacher" action="teacher_action"/>
+    <menuitem id="grades_course_menu" parent="grades_course_manager_menu" name="Courses" action="grades_courses_action"/>
+    <menuitem id="grades_evaluation_menu" parent="grades_course_manager_menu" name="Evaluations" action="grades_evaluations_action"/>
+    <menuitem id="students_menu" parent="grades_manager_menu" name="Students" action="students_action"/>
 </odoo>

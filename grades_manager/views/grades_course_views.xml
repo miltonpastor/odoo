@@ -20,6 +20,8 @@
                 <field name="last_evaluation_date"/>
                 <field name="course_image"/>
                 <field name="course_shift"/>
+                <field name="teacher_id"/>
+                <field name="grades_evaluation_ids"/>
             </list>
         </field>
 
@@ -29,13 +31,16 @@
         <field name="model">grades.course</field>
         <field name="arch" type="xml">
             <form string="Courses">
+                <header>
+                    <field name="state" widget="statusbar" options="{'clickable':1}"/>
+                </header>
                 <sheet>
                     <group>
                         <group>
-                            <field name="name"/>
-                            <field name="student_qty"/>
-                            <field name="grase_avarage"/>
-                            <field name="description"/>
+                            <field name="name" required="1"/>
+                            <field name="student_qty" required="1"/>
+                            <field name="grase_avarage" required="1"/>
+                            <field name="description" required="1"/>
                         </group>
                         <group>
                             <field name="is_active"/>
@@ -43,11 +48,27 @@
                             <field name="course_end"/>
                         </group>
                         <group>
-                            <field name="last_evaluation_date"/>
+                            <field name="last_evaluation_date" readonly="1"/>
                             <field name="course_image"/>
                             <field name="course_shift"/>
+                            <field name="teacher_id" domain="[('is_teacher', '=', True)]" readonly="state != 'register'"
+                                context="{'form_view_ref': 'grades_manager.teacher_form_view'}"
+                            />
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Evaluations" name="evaluations_page">
+                            <field name="grades_evaluation_ids" context="{'list_view_ref': 'grades_manager.evaluation_list_view',
+                                                                          'form_view_ref': 'grades_manager.evaluation_form_view'}"
+                            />
+                        </page>
+                        <page string="Students" name="students_page">
+                            <field name="student_ids" domain="[('is_student', '=', True)]"
+                                context="{'list_view_ref': 'grades_manager.student_list_view',
+                                          'form_view_ref': 'grades_manager.student_form_view'}"
+                            />
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
