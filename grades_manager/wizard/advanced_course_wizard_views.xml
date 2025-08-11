@@ -1,0 +1,29 @@
+<odoo>
+    <record id="advanced_course_wizard_form_view" model="ir.ui.view">
+        <field name="name">advanced.course.wizard.form.view</field>
+        <field name="model">advanced.course.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Advanced Course Wizard">
+                <sheet>
+                    <group>
+                        <field name="available_student_ids" invisible="1"/>
+                        <field name="course_name"/>
+                        <field name="teacher_id"/>
+                        <field name="student_ids" domain="[('id','=',available_student_ids)]">
+                            <list>
+                                <field name="name"/>
+                                <field name="email"/>
+                                <field name="phone"/>
+                            </list>
+                        </field>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Create" type="object" name="create_course" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
+

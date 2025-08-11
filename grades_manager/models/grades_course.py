@@ -33,6 +33,7 @@ class GradesCourse(models.Model):
                              required = True,
                              help = 'State of the course')
     invalid_dates = fields.Boolean(string = 'Invalid Dates')
+    type = fields.Selection([('normal', 'Normal'), ('advanced', 'Advanced')], string='Course Type', default='normal')
 
 
     def write(self, vals):
@@ -63,3 +64,13 @@ class GradesCourse(models.Model):
     def _compute_student_qty(self):
         for course in self:
             course.student_qty = len(course.student_ids)
+
+
+    def action_advanced_course_wizard(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Advanced Course Wizard',
+            'res_model': 'advanced.course.wizard',
+            'view_mode': 'form',
+            'target': 'new',
+        }

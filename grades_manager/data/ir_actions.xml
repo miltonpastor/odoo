@@ -1,0 +1,10 @@
+<odoo>
+    <record id="create_advanced_course_action" model="ir.actions.server">
+        <field name="name">Create Advanced Course Action</field>
+        <field name="model_id" ref="grades_manager.model_grades_course"/>
+        <field name="binding_model_id" ref="grades_manager.model_grades_course"/>
+        <field name="state">code</field>  <!-- Va a ejecutar codigo python -->
+        <!-- De los registros seleccionados (checks) -->
+        <field name="code"> action = records.action_advanced_course_wizard() </field>
+    </record>
+</odoo>
