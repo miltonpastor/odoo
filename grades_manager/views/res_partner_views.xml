@@ -36,7 +36,7 @@
             <form string="Teacher">
                 <sheet>
                     <group>
-                        <field name="display_name"/>
+                        <field name="name"/>
                         <field name="phone"/>
                         <field name="email"/>
                         <field name="is_teacher"/>

@@ -35,6 +35,8 @@
                     <field name="state" widget="statusbar" options="{'clickable':1}"/>
                 </header>
                 <sheet>
+                    <field name="invalid_dates" invisible="1"/>
+                    <div class="text-warning mb-3" invisible="not invalid_dates">The start date cannot be greater than the end data</div>
                     <group>
                         <group>
                             <field name="name" required="1"/>
